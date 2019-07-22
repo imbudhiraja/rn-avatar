@@ -69,8 +69,9 @@ import { Sizes } from 'react-native-avatar';
 13. [IconTypes.Zocial](https://oblador.github.io/react-native-vector-icons/)
 
 ### Example
-import Avatar, { IconTypes, Sizes } from 'react-native-avatar';
 ```
+import Avatar, { IconTypes, Sizes } from 'react-native-avatar';
+
 class Example extends PureComponent {
   render() {
     return (
@@ -126,6 +127,9 @@ class Example extends PureComponent {
           onEditPress={()=> console.log('edit button pressed')}
           onLongPress={()=> console.log('component long pressed')}
           onPress={()=> console.log('component pressed')}
+          editButton={{
+            name: 'edit', type: IconTypes.Entypo
+          }}
         />
       </View>
     );
