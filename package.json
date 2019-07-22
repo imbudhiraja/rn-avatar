@@ -1,0 +1,58 @@
+{
+  "name": "react-native-avatar",
+  "version": "1.0.0",
+  "description": "React Native Avatars can be used to represent people in a graphical way with support for falling back to using the user's initials on a colored background as the avatar if valid source is not present.",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint . --ext .js",
+    "precommit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    ".js": [
+      "npm run lint",
+      "git add ."
+    ]
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.2",
+    "react": "*",
+    "react-native": ">=0.39",
+    "react-native-vector-icons": "^6.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-imbudhiraja": "^1.0.4",
+    "husky": "^3.0.0",
+    "lint-staged": "^9.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imbudhiraja/react-native-avatar.git"
+  },
+  "keywords": [
+    "avatar",
+    "react-native-avatar",
+    "react",
+    "react-user-avatar",
+    "react-native-user-avatar",
+    "user-initials",
+    "react-native-animated-user-initials",
+    "animated",
+    "react-native-component",
+    "react-component",
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "author": "Manish Budhiraja",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imbudhiraja/react-native-avatar/issues"
+  },
+  "homepage": "https://github.com/imbudhiraja/react-native-avatar#readme"
+}
