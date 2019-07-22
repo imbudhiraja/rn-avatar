@@ -17,8 +17,8 @@ import { AvatarSizes, IconTypes, Sizes } from './contants';
 
 const defaultEditButton = {
   color: '#fff',
-  name: 'user',
-  type: 'font-awesome',
+  name: 'edit',
+  type: IconTypes.Entypo,
   underlayColor: '#000',
 };
 
