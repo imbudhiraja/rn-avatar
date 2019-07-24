@@ -32,11 +32,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/imbudhiraja/react-native-avatar.git"
+    "url": "git+https://github.com/imbudhiraja/rn-avatar.git"
   },
   "keywords": [
     "avatar",
     "react-native-avatar",
+    "rn-avatar",
     "react",
     "react-user-avatar",
     "react-native-user-avatar",
@@ -52,7 +53,7 @@
   "author": "Manish Budhiraja",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/imbudhiraja/react-native-avatar/issues"
+    "url": "https://github.com/imbudhiraja/rn-avatar/issues"
   },
-  "homepage": "https://github.com/imbudhiraja/react-native-avatar#readme"
+  "homepage": "https://github.com/imbudhiraja/rn-avatar#readme"
 }

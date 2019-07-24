@@ -8,7 +8,7 @@ React Native Avatars can be used to represent people in a graphical way with sup
 ###  Installation
 ----
 ```
-npm install --save react-native-avatar
+npm install --save rn-avatar
 npm install --save react-native-vector-icons
 react-native link react-native-vector-icons
 ```
@@ -21,7 +21,7 @@ react-native link react-native-vector-icons
 | avatarStyle | object (style) | none  | Avatar image style |
 | containerStyle | object (style)	  | none  | Outer container style |
 | editButton | { name: 'mode-edit', type: 'material', color: '#fff', underlayColor: '#000' }  | none  | Vector Icon props to be user for edit button |
-| icon | object {name: string, color: string, size: number, type: string }  | (default is Material, or [choose from supported icon sets](https://github.com/imbudhiraja/react-native-avatar#icon-set) | Displays an icon as the main content of the Avatar. Cannot be used alongside title. When used with the source prop it will be used as the placeholder. |
+| icon | object {name: string, color: string, size: number, type: string }  | (default is Material, or [choose from supported icon sets](https://github.com/imbudhiraja/rn-avatar#icon-set) | Displays an icon as the main content of the Avatar. Cannot be used alongside title. When used with the source prop it will be used as the placeholder. |
 | iconStyle | object (style) | none  | styling for icon component |
 | imageProps | object  | none  | Optional properties to pass to the avatar e.g "resizeMode" |
 | onEditPress | function  | none  | Callback function when pressing on the edit button |
@@ -30,7 +30,7 @@ react-native link react-native-vector-icons
 | overlayContainerStyle | object (style) | none  | Style for the view outside image or icon |
 | placeholderStyle | object (style)  | { backgroundColor: '#BDBDBD' }  | Adds style to the placeholder wrapper |
 | rounded | boolean  | false  | Makes the avatar circular |
-| size | string or number  | Sizes.SMALL | Size of the avatar, [choose from supported size sets](https://github.com/imbudhiraja/react-native-avatar#avatar-size-set)  or give any number |
+| size | string or number  | Sizes.SMALL | Size of the avatar, [choose from supported size sets](https://github.com/imbudhiraja/rn-avatar#avatar-size-set)  or give any number |
 | showEditButton | boolean  | false  | Shows an edit button over the avatar  |
 | source | object (style)  | none  | [Image source](https://facebook.github.io/react-native/docs/image#source)  |
 | title | string  | none  | To render initials of title inside placeholder  |
@@ -40,7 +40,7 @@ react-native link react-native-vector-icons
 | ImageComponent | React component or element  | [Image](https://facebook.github.io/react-native/docs/image)  | Custom ImageComponent for Avatar |
 
 ### Avatar Size Set
-import { Sizes } from 'react-native-avatar';
+import { Sizes } from 'rn-avatar';
 
 | Size |  Description |
 |--|--|
@@ -52,7 +52,7 @@ import { Sizes } from 'react-native-avatar';
 
 ### Icon Set
 
- import { IconTypes } from 'react-native-avatar';
+ import { IconTypes } from 'rn-avatar';
 
 1. [IconTypes.AntDesign](https://oblador.github.io/react-native-vector-icons/)
 2. [IconTypes.Entypo](https://oblador.github.io/react-native-vector-icons/)
@@ -70,7 +70,7 @@ import { Sizes } from 'react-native-avatar';
 
 ### Example
 ```
-import Avatar, { IconTypes, Sizes } from 'react-native-avatar';
+import Avatar, { IconTypes, Sizes } from 'rn-avatar';
 
 class Example extends PureComponent {
   render() {
@@ -140,4 +140,4 @@ class Example extends PureComponent {
 ### License
 ----
 
-Licensed under the [MIT](https://github.com/imbudhiraja/react-native-avatar/blob/master/LICENSE)
+Licensed under the [MIT](https://github.com/imbudhiraja/rn-avatar/blob/master/LICENSE)
