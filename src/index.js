@@ -1,6 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { View,
+import React from "react";
+import PropTypes from "prop-types";
+import {
+  View,
   ViewPropTypes,
   Text,
   Image as RNImage,
@@ -8,18 +9,19 @@ import { View,
   TouchableOpacity,
   TouchableHighlight,
   TouchableNativeFeedback,
-  TouchableWithoutFeedback } from 'react-native';
-import { renderNode, getInitials } from './utility';
-import Icon from './icon';
-import Image from './image';
-import styles from './styles';
-import { AvatarSizes, IconTypes, Sizes } from './contants';
+  TouchableWithoutFeedback
+} from "react-native";
+import { renderNode, getInitials } from "./utility";
+import Icon from "./icon";
+import Image from "./image";
+import styles from "./styles";
+import { AvatarSizes, IconTypes, Sizes } from "./contants";
 
 const defaultEditButton = {
-  color: '#fff',
-  name: 'edit',
+  color: "#fff",
+  name: "edit",
   type: IconTypes.Entypo,
-  underlayColor: '#000',
+  underlayColor: "#000"
 };
 
 const Avatar = ({
@@ -43,19 +45,21 @@ const Avatar = ({
   placeholderStyle,
   renderPlaceholderContent,
   ImageComponent,
+  titleBgColor,
   ...attributes
 }) => {
-  const width = typeof size === 'number' ? size : AvatarSizes[size] || AvatarSizes.small;
+  const width =
+    typeof size === "number" ? size : AvatarSizes[size] || AvatarSizes.small;
   const height = width;
   const titleSize = width / 2;
   const iconSize = width / 2;
 
   const editButton = {
     ...defaultEditButton,
-    ...passedEditButton,
+    ...passedEditButton
   };
   const editButtonSize = editButton.size || (width + height) / 2 / 3;
-  const user = getInitials(title);
+  const user = getInitials(title, titleBgColor);
 
   const Utils = showEditButton && (
     <TouchableHighlight
@@ -64,9 +68,9 @@ const Avatar = ({
         {
           borderRadius: editButtonSize / 2,
           height: editButtonSize,
-          width: editButtonSize,
+          width: editButtonSize
         },
-        editButton.style,
+        editButton.style
       ])}
       underlayColor={editButton.underlayColor}
       onPress={onEditPress}
@@ -77,31 +81,32 @@ const Avatar = ({
     </TouchableHighlight>
   );
 
-  const PlaceholderContent = (renderPlaceholderContent
-      && renderNode(undefined, renderPlaceholderContent))
-    || (title && (
+  const PlaceholderContent =
+    (renderPlaceholderContent &&
+      renderNode(undefined, renderPlaceholderContent)) ||
+    (title && (
       <Text
         style={StyleSheet.flatten([
           styles.title,
           { fontSize: titleSize },
-          titleStyle,
+          titleStyle
         ])}
       >
         {user.initials}
       </Text>
-    ))
-    || (icon && (
+    )) ||
+    (icon && (
       <Icon
         style={iconStyle && iconStyle}
-        color={icon.color || 'white'}
-        name={icon.name || 'user'}
+        color={icon.color || "white"}
+        name={icon.name || "user"}
         size={icon.size || iconSize}
         type={icon.type && icon.type}
       />
     ));
 
   // Remove placeholder styling if we're not using image
-  const hidePlaceholder = !source;
+  const hidePlaceholder = !source || (source && source.uri === "");
 
   return (
     <Component
@@ -110,32 +115,35 @@ const Avatar = ({
       style={StyleSheet.flatten([
         styles.container,
         {
-          height, width,
+          height,
+          width
         },
         rounded && { borderRadius: width / 2 },
-        containerStyle,
+        containerStyle
       ])}
       {...attributes}
     >
       <Image
         placeholderStyle={StyleSheet.flatten([
-          placeholderStyle, { backgroundColor: user.bgColor },
-          hidePlaceholder && { backgroundColor: 'transparent' },
+          placeholderStyle,
+          { backgroundColor: user.bgColor },
+          hidePlaceholder && { backgroundColor: "transparent" }
         ])}
         PlaceholderContent={PlaceholderContent}
         containerStyle={StyleSheet.flatten([
           styles.overlayContainer,
           overlayContainerStyle,
           rounded && {
-            borderRadius: width / 2, overflow: 'hidden',
-          },
+            borderRadius: width / 2,
+            overflow: "hidden"
+          }
         ])}
         source={source}
         {...imageProps}
         style={StyleSheet.flatten([
           styles.avatar,
           imageProps && imageProps.style,
-          avatarStyle,
+          avatarStyle
         ])}
         ImageComponent={ImageComponent}
       />
@@ -150,7 +158,7 @@ Avatar.propTypes = {
     TouchableOpacity,
     TouchableHighlight,
     TouchableNativeFeedback,
-    TouchableWithoutFeedback,
+    TouchableWithoutFeedback
   ]).isRequired,
   ImageComponent: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   activeOpacity: PropTypes.number,
@@ -162,7 +170,7 @@ Avatar.propTypes = {
     size: PropTypes.number,
     style: ViewPropTypes.style,
     type: PropTypes.string,
-    underlayColor: PropTypes.string,
+    underlayColor: PropTypes.string
   }),
   icon: PropTypes.object,
   iconStyle: Text.propTypes.style,
@@ -176,17 +184,17 @@ Avatar.propTypes = {
     PropTypes.element,
     PropTypes.object,
     PropTypes.bool,
-    PropTypes.func,
+    PropTypes.func
   ]).isRequired,
   rounded: PropTypes.bool,
   showEditButton: PropTypes.bool,
   size: PropTypes.oneOfType([
-    PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
-    PropTypes.number,
+    PropTypes.oneOf(["small", "medium", "large", "xlarge"]),
+    PropTypes.number
   ]),
   source: RNImage.propTypes.source.isRequired,
-  title: PropTypes.string.isRequired,
-  titleStyle: Text.propTypes.style,
+  title: PropTypes.string,
+  titleStyle: Text.propTypes.style
 };
 
 Avatar.defaultProps = {
@@ -204,8 +212,10 @@ Avatar.defaultProps = {
   placeholderStyle: {},
   rounded: false,
   showEditButton: false,
-  size: 'small',
-  titleStyle: {},
+  size: "small",
+  title: null,
+  titleBgColor: "rgba(142, 142, 147, 0.18)",
+  titleStyle: {}
 };
 
 export { IconTypes, Sizes };
