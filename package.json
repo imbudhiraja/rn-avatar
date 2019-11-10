@@ -1,6 +1,6 @@
 {
   "name": "rn-avatar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Native Avatars can be used to represent people in a graphical way with support for falling back to using the user's initials on a colored background as the avatar if valid source is not present.",
   "main": "src/index.js",
   "scripts": {
