@@ -19,16 +19,16 @@
     ]
   },
   "peerDependencies": {
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "react": "*",
-    "react-native": ">=0.39",
-    "react-native-vector-icons": "^6.6.0"
+    "react-native": ">=0.63",
+    "react-native-vector-icons": "^7.0.0"
   },
   "devDependencies": {
-    "eslint": "^6.0.1",
-    "eslint-config-imbudhiraja": "^1.0.4",
-    "husky": "^3.0.0",
-    "lint-staged": "^9.2.0"
+    "eslint": "^7.7.0",
+    "eslint-config-imbudhiraja": "^1.1.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11"
   },
   "repository": {
     "type": "git",
